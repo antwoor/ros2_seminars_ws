@@ -5,35 +5,76 @@
 This assignment focuses on developing your ability to write custom ROS 2 nodes and utilize launch files for running multiple nodes simultaneously. You will create a custom ROS 2 node that controls the Turtlesim simulation and develop a launch file to run the simulation and node together.
 
 ## Tasks
-run 
+### Build a docker image
+```bash
+   cd ros2_seminars_ws
+```
+```bash
+   docker build -t stankin_humble .
+```
+Now you have a docker image with name of stankin_humble. You can launch it with **`run.sh`** script that locates in **`seminar_3`** folder
+```bash
+   cd ~/ros2_seminars_ws
+   bash run.sh
+```
+
+it will open our recently created image with special parametres such as
+
+**`--env DISPLAY=$DISPLAY`** to show graphics to display 
+
+**`--env QT_X11_NO_MITSHM=1`** to display QT-based apps properelly 
+
+**`--volume /tmp/.X11-unix:/tmp/.X11-unix `** to connect our docker graphic apps with **X11** window-display-manager 
+
+**`--volume $PWD:/workspace`** to mount our current directory to docker`s **/workspace** directory  
+
+By the way line xhost **`+local:docker`** command used to give access to docker to use **X11** system
 ```bash 
    cd module_2_assignments
    colcon build
    source install/setup.bash
    ```
 
-### Task 1: Create a Custom ROS 2 Node
+# Task 1: Create or modify a Custom ROS 2 Node
 
-- **Develop a ROS 2 node** that makes the Turtlesim follow a unique pattern:
-  - **Circle Movement:** The turtle should move in a circle with a radius that is provided as a user input.
-  - **Logarithmic Spiral Movement:** The turtle should move in a logarithmic spiral pattern.
+- **Describe the code in src/task1 folder** inspect the code. If you want, write comments :
+  - **Circle Movement:** change the radius and velocity.
+  - **Logarithmic Spiral Movement:** change the radius and growth rate.
 
-run where numers are parametres of radius and spiral respectively
+## You can launch a turtlesim_node with this command
 ```bash
- ros2 ros2 run module_2_assignment task1_circle 1  
+ ros2 run turtlesim turtlesim_node  
+ ```
+#### and then execute these commands in another terminal to run your nodes
+```bash
+ ros2 run seminar_3 task1_circle 1  
  ```
 ```bash
- ros2 run module_2_assignment task1_spiral 1 1
+ ros2 run seminar_3 task1_spiral 1 1
  ```
-### Task 2: Develop a Launch File
+## Or you can simply modify ***'launch/task_1.launch.py'***
+## To create your custom node you should write **`your_node.cpp`** file in ***'src/task1'*** directory and then add new string to **`CMakeLists.txt`**
+```cmake
+   add_executable("Your custom node name" src/task_1/"your file.cpp" src/task_1/turtle_pub.cpp src/task_1/"your file with main function".cpp)
+ament_target_dependencies(task1_spiral rclcpp geometry_msgs)
+``` 
+# Task 2: Develop/modify a Launch File
 
-- **Create a launch file** that starts the Turtlesim simulation and the custom ROS 2 node simultaneously.
+- **Create a launch file** that starts the Turtlesim simulation and the custom ROS 2 node simultaneously with a lots of turtles.
 
-- **Ensure proper documentation** of the node and launch file creation process, including the code and the results of executing the tasks.
-
-run
+- **Ensure proper documentation** write comments.
+```python
+   SpiralTurtle1 = Node( #SpiralTurtle1 - name of the node in Python
+        package='seminar_3', #name of the package
+        executable='task1_spiral', #your executable from CmakeLists.txt
+        name='spiral1', #name of the node in rqt_graph
+        arguments=[radius, growth_rate],
+        parameters=[{'cmd_vel_topic': '/turtle5/cmd_vel'}]    
+    )
+```
+run #example
 ```bash
-ros2 launch module_2_assignment task_2.launch.py
+ros2 launch seminar_3 task_2.launch.py
 ```
 ### Task 3: Modify the Turtlesim Simulation Environment
 
@@ -45,15 +86,20 @@ run
 ```bash
 ros2 launch module_2_assignment task_3.launch.py
 ```
-### Task 4: Modify Turtle Behavior with Parameters
-
-- **Utilize ROS 2 parameters** to alter the behavior of the turtles:
-  - **Change the speed** of the turtles dynamically during the simulation.
-
-run basically the same as task3, I`ve done it with parametres by default
+# Task 3: Use your node to drive turtlebot3
+first, run
 ```bash
-ros2 launch module_2_assignment task_2.launch.py
+   export TURTLEBOT3_MODEL=burger
 ```
+then run
+```bash
+ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
+```
+and in another terminal run
+```bash
+ros2 launch seminar_3 turtle3.launch.py      
+```
+## replace turtle3.launch.py with yor launch file
 ## Learning Outcome
 
 By completing this assignment, you will:
@@ -63,19 +109,8 @@ By completing this assignment, you will:
 - Understand how to use ROS 2 parameters to control and alter the behavior of nodes in real-time.
 ---
 ## Submission Process
+25-34 : отчёт, скриншоты изменённых/новых частей кода, первое задание
 
-1. **Create Files:**
-   - Navigate to the `module_2_assignment` package.
-   - Create the required files for the custom ROS 2 node and launch file.
+35-44 : то же самое что и на 25 + второе задание
 
-2. **Document Your Work:**
-   - Create a `README.md` file in the `module_2_assignment` package.
-   - Provide details about the files you created, including explanations of the code and the commands needed to run your custom node and launch file.
-
-3. **Submit Your Assignment:**
-   - Push your changes to your forked repository.
-   - Provide your repository link in the assignment submission text area.
-   - **Note**: Ensure you press the "Start Assignment" button when you see the page (as it takes time to generate the pages).
-
-4. **Wait for Review:**
-   - Wait for the instructors to review your submission.
+45-54 : запустить свой код на имуляции реального робота(задание номер 3)  

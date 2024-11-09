@@ -22,7 +22,10 @@ ament_target_dependencies(task1_circle rclcpp geometry_msgs)
 #spiral
 add_executable(task1_spiral src/task_1/turtle_spiral.cpp src/task_1/turtle_pub.cpp src/task_1/ln_spiral.cpp)
 ament_target_dependencies(task1_spiral rclcpp geometry_msgs)
+#write your custom node here
+######
 
+######
 install(TARGETS
   task1_spiral
   task1_circle  
