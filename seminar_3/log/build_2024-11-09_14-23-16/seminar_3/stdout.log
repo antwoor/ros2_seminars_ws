@@ -1,0 +1,26 @@
+[ 27%] Built target turtle_cmd_pub
+[ 63%] Built target task1_circle
+[100%] Built target task1_spiral
+-- Install configuration: ""
+-- Up-to-date: /home/antwoor/stankin/ros_seminars_ws/seminar_3/install/seminar_3/lib/seminar_3/task1_spiral
+-- Up-to-date: /home/antwoor/stankin/ros_seminars_ws/seminar_3/install/seminar_3/lib/seminar_3/task1_circle
+-- Up-to-date: /home/antwoor/stankin/ros_seminars_ws/seminar_3/install/seminar_3/lib/seminar_3/turtle_cmd_pub
+-- Up-to-date: /home/antwoor/stankin/ros_seminars_ws/seminar_3/install/seminar_3/share/seminar_3/launch
+-- Installing: /home/antwoor/stankin/ros_seminars_ws/seminar_3/install/seminar_3/share/seminar_3/launch/task_2.launch.py
+-- Up-to-date: /home/antwoor/stankin/ros_seminars_ws/seminar_3/install/seminar_3/share/seminar_3/launch/turtle3.launch.py
+-- Up-to-date: /home/antwoor/stankin/ros_seminars_ws/seminar_3/install/seminar_3/share/seminar_3/launch/task_3.launch.py
+-- Up-to-date: /home/antwoor/stankin/ros_seminars_ws/seminar_3/install/seminar_3/share/ament_index/resource_index/package_run_dependencies/seminar_3
+-- Up-to-date: /home/antwoor/stankin/ros_seminars_ws/seminar_3/install/seminar_3/share/ament_index/resource_index/parent_prefix_path/seminar_3
+-- Up-to-date: /home/antwoor/stankin/ros_seminars_ws/seminar_3/install/seminar_3/share/seminar_3/environment/ament_prefix_path.sh
+-- Up-to-date: /home/antwoor/stankin/ros_seminars_ws/seminar_3/install/seminar_3/share/seminar_3/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/antwoor/stankin/ros_seminars_ws/seminar_3/install/seminar_3/share/seminar_3/environment/path.sh
+-- Up-to-date: /home/antwoor/stankin/ros_seminars_ws/seminar_3/install/seminar_3/share/seminar_3/environment/path.dsv
+-- Up-to-date: /home/antwoor/stankin/ros_seminars_ws/seminar_3/install/seminar_3/share/seminar_3/local_setup.bash
+-- Up-to-date: /home/antwoor/stankin/ros_seminars_ws/seminar_3/install/seminar_3/share/seminar_3/local_setup.sh
+-- Up-to-date: /home/antwoor/stankin/ros_seminars_ws/seminar_3/install/seminar_3/share/seminar_3/local_setup.zsh
+-- Up-to-date: /home/antwoor/stankin/ros_seminars_ws/seminar_3/install/seminar_3/share/seminar_3/local_setup.dsv
+-- Installing: /home/antwoor/stankin/ros_seminars_ws/seminar_3/install/seminar_3/share/seminar_3/package.dsv
+-- Up-to-date: /home/antwoor/stankin/ros_seminars_ws/seminar_3/install/seminar_3/share/ament_index/resource_index/packages/seminar_3
+-- Up-to-date: /home/antwoor/stankin/ros_seminars_ws/seminar_3/install/seminar_3/share/seminar_3/cmake/seminar_3Config.cmake
+-- Up-to-date: /home/antwoor/stankin/ros_seminars_ws/seminar_3/install/seminar_3/share/seminar_3/cmake/seminar_3Config-version.cmake
+-- Up-to-date: /home/antwoor/stankin/ros_seminars_ws/seminar_3/install/seminar_3/share/seminar_3/package.xml

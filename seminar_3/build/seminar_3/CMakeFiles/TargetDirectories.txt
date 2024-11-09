@@ -1,0 +1,12 @@
+/home/antwoor/stankin/ros_seminars_ws/seminar_3/build/seminar_3/CMakeFiles/uninstall.dir
+/home/antwoor/stankin/ros_seminars_ws/seminar_3/build/seminar_3/CMakeFiles/seminar_3_uninstall.dir
+/home/antwoor/stankin/ros_seminars_ws/seminar_3/build/seminar_3/CMakeFiles/turtle_cmd_pub.dir
+/home/antwoor/stankin/ros_seminars_ws/seminar_3/build/seminar_3/CMakeFiles/task1_circle.dir
+/home/antwoor/stankin/ros_seminars_ws/seminar_3/build/seminar_3/CMakeFiles/task1_spiral.dir
+/home/antwoor/stankin/ros_seminars_ws/seminar_3/build/seminar_3/CMakeFiles/test.dir
+/home/antwoor/stankin/ros_seminars_ws/seminar_3/build/seminar_3/CMakeFiles/edit_cache.dir
+/home/antwoor/stankin/ros_seminars_ws/seminar_3/build/seminar_3/CMakeFiles/rebuild_cache.dir
+/home/antwoor/stankin/ros_seminars_ws/seminar_3/build/seminar_3/CMakeFiles/list_install_components.dir
+/home/antwoor/stankin/ros_seminars_ws/seminar_3/build/seminar_3/CMakeFiles/install.dir
+/home/antwoor/stankin/ros_seminars_ws/seminar_3/build/seminar_3/CMakeFiles/install/local.dir
+/home/antwoor/stankin/ros_seminars_ws/seminar_3/build/seminar_3/CMakeFiles/install/strip.dir
