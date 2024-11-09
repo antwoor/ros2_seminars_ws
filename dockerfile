@@ -20,9 +20,10 @@ RUN sudo apt-get update && \
 RUN sudo apt-get update && \
     sudo apt-get install -y ros-humble-rmw-cyclonedds-cpp && \
     sudo apt-get install -y build-essential cmake git
-    
+
 RUN apt-get update &&\
 apt-get install -y ros-$ROS_DISTRO-turtlebot3
+RUN apt-get update && apt-get install -y ros-$ROS_DISTRO-turtlebot3*
 
 # Очистка кеша apt для уменьшения размера образа
 RUN sudo apt-get clean && rm -rf /var/lib/apt/lists/*
