@@ -76,16 +76,6 @@ run #example
 ```bash
 ros2 launch seminar_3 task_2.launch.py
 ```
-### Task 3: Modify the Turtlesim Simulation Environment
-
-- **Use existing Turtlesim services** such as `spawn` and `clear` to modify the simulation environment:
-  - **Spawn 5 Turtlebots** with a single launch file, placing them diagonally from the top left to the bottom right.
-  - **Drive the middle 3 turtles** back and forth continuously using ROS 2 services.
-
-run
-```bash
-ros2 launch module_2_assignment task_3.launch.py
-```
 # Task 3: Use your node to drive turtlebot3
 first, run
 ```bash
