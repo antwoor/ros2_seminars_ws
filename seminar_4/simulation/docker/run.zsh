@@ -13,7 +13,8 @@ GPU_FLAG=""
 
 if [ -n "$(which nvidia-smi)" ] && [ -n "$(nvidia-smi)" ]; then
     GPU_FLAG=(--gpus all)
-    IMG_NAME="${IMG_NAME}:updated"
+    IMG_NAME="stankin_humble"
+    echo ${IMG_NAME}
 else
     IMG_NAME="${IMG_NAME}:general"
 fi
@@ -31,5 +32,5 @@ docker run  ${GPU_FLAG[@]} \
             -v ${SIM_ROOT}/workspace:/workspace \
             --net=host \
             --privileged \
-            --name "hsl_2022" ${IMG_NAME} \
+            --name "seminar_4" ${IMG_NAME} \
             > /dev/null

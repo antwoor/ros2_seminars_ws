@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker exec -it "hsl_2022" /bin/bash
+docker exec -it "seminar_4" /bin/bash

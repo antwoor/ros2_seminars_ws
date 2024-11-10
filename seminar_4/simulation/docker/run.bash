@@ -6,14 +6,14 @@ SIM_ROOT="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )"
 
 xhost +local:docker > /dev/null || true
 
-IMG_NAME="nickodema/hsl_2022"
+IMG_NAME="stankin_humble"
 GPU_FLAG=""
 
 ### Check if NVIDIA GPU flag is needed ----------------------------------- #
 
 if [ -n "$(which nvidia-smi)" ] && [ -n "$(nvidia-smi)" ]; then
     GPU_FLAG=(--gpus all)
-    IMG_NAME="${IMG_NAME}:nvidia"
+    IMG_NAME="stankin_humble"
 else
     IMG_NAME="${IMG_NAME}:updated"
 fi
@@ -31,5 +31,5 @@ docker run  ${GPU_FLAG[@]} \
             -v ${SIM_ROOT}/workspace:/workspace \
             --net=host \
             --privileged \
-            --name "hsl_2022" ${IMG_NAME} \
+            --name "seminar_4" ${IMG_NAME} \
             > /dev/null
