@@ -14,7 +14,7 @@ This assignment focuses on developing your ability to write custom ROS 2 nodes a
 ```
 Now you have a docker image with name of stankin_humble. You can launch it with **`run.sh`** script that locates in **`seminar_3`** folder
 ```bash
-   cd ~/ros2_seminars_ws
+   cd ~/ros2_seminars_ws/seminar_3
    bash run.sh
 ```
 
@@ -46,9 +46,11 @@ By the way line xhost **`+local:docker`** command used to give access to docker 
  ros2 run turtlesim turtlesim_node  
  ```
 #### and then execute these commands in another terminal to run your nodes
+измените цифру 1 на ваш желаемый радиус
 ```bash
  ros2 run seminar_3 task1_circle 1  
  ```
+измените цифры 1 и 1 на ваши желаемые параметры
 ```bash
  ros2 run seminar_3 task1_spiral 1 1
  ```
@@ -79,7 +81,7 @@ ros2 launch seminar_3 task_2.launch.py
 # Task 3: Use your node to drive turtlebot3
 first, run
 ```bash
-   export TURTLEBOT3_MODEL=burger
+export TURTLEBOT3_MODEL=burger
 ```
 then run
 ```bash
