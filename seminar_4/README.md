@@ -76,3 +76,6 @@
 После этого в окне gazebo вы должны увидеть примерно следующую картинку:
 
 ![turtletown_gazebo](docs/pics/ozyland.png)
+## для запуска ноды для анализа qr-кодов используйте следующую команду внутри контейнера
+
+    python3 /workspace/star/src/qr_decoder.py

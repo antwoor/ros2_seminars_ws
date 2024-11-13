@@ -30,7 +30,7 @@ it will open our recently created image with special parametres such as
 
 By the way line xhost **`+local:docker`** command used to give access to docker to use **X11** system
 ```bash 
-   cd module_2_assignments
+   cd /workspace
    colcon build
    source install/setup.bash
    ```
