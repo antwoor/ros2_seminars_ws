@@ -85,6 +85,7 @@ export TURTLEBOT3_MODEL=burger
 ```
 then run
 ```bash
+source /opr/ros/humble/setup.bash
 ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
 ```
 and in another terminal run
