@@ -15,6 +15,7 @@ if [ -n "$(which nvidia-smi)" ] && [ -n "$(nvidia-smi)" ]; then
     GPU_FLAG=(--gpus all)
     IMG_NAME="stankin_humble"
 else
+    GPU_FLAG=(--gpus all)
     IMG_NAME="${IMG_NAME}"
 fi
 
