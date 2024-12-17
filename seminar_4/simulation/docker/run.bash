@@ -22,8 +22,7 @@ fi
 
 ### DOCKER RUN ----------------------------------------------------------- #
 
-docker run  ${GPU_FLAG[@]} \
-            -d -ti --rm \
+docker run  -d -ti --rm \
             -e "DISPLAY" \
             -e "QT_X11_NO_MITSHM=1" \
             -e XAUTHORITY \
