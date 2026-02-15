@@ -1,5 +1,5 @@
 # Или :general, если у кого-то стоит не nvidia
-FROM nickodema/hsl_2022:nvidia  
+FROM nickodema/hsl_2022:general  
 
 # Обновление списка пакетов и установка необходимых пакетов
 RUN sudo apt-get update &&\
