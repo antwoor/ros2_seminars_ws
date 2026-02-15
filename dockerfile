@@ -24,6 +24,6 @@ RUN sudo apt-get update && \
 RUN apt-get update &&\
 apt-get install -y ros-$ROS_DISTRO-turtlebot3
 RUN apt-get update && apt-get install -y ros-$ROS_DISTRO-turtlebot3*
-
+RUN pip install --force-reinstall 'numpy<2'
 # Очистка кеша apt для уменьшения размера образа
 RUN sudo apt-get clean && rm -rf /var/lib/apt/lists/*
