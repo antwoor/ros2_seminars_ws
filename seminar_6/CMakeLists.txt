@@ -30,7 +30,7 @@ target_link_libraries(lineFollowing TIFF::TIFF)
 install(TARGETS lineFollowing GoalSeeker
   DESTINATION lib/${PROJECT_NAME})
 
-install(DIRECTORY launch worlds urdf
+install(DIRECTORY launch worlds urdf models
   DESTINATION share/${PROJECT_NAME}/
 )
 
