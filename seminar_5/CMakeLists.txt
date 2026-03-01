@@ -32,7 +32,7 @@ install(TARGETS mazeSolving lineFollowing
 
 
 
-install(DIRECTORY launch worlds urdf
+install(DIRECTORY launch worlds urdf models
   DESTINATION share/${PROJECT_NAME}/
 )
 
