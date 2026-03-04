@@ -1,0 +1,10 @@
+I_gain: 0.0
+P_gain: 0.0
+camera_topic: /camera/image_raw
+lower_threshold: 50
+qos_overrides./parameter_events.publisher.depth: 1000
+qos_overrides./parameter_events.publisher.durability: volatile
+qos_overrides./parameter_events.publisher.history: keep_last
+qos_overrides./parameter_events.publisher.reliability: reliable
+upper_threshold: 100
+use_sim_time: false
