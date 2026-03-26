@@ -132,6 +132,6 @@ void LineFollower::cameraCallback(const sensor_msgs::msg::Image::SharedPtr camer
     cv::imshow("Следование по линии", roi);
     cv::waitKey(1);
     
-    // КРИТИЧЕСКИ ВАЖНО: очищаем вектор после обработки, чтобы предотвратить утечку памяти
+    // Очищаем вектор после обработки, чтобы предотвратить утечку памяти
     edges.clear();
 }
