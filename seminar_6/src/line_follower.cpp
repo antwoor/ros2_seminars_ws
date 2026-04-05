@@ -75,7 +75,7 @@ void LineFollower::cameraCallback(const sensor_msgs::msg::Image::SharedPtr camer
     // Защита от ложных остановок на резких поворотах:
     // робот останавливается ТОЛЬКО после последовательных кадров без линии
     static int lineLostCounter = 0;
-    const int LINE_LOST_THRESHOLD = 60;  // 15 кадров ≈ 0.5 сек при частоте 30 Гц
+    const int LINE_LOST_THRESHOLD = 60;  // 60 кадров ≈ 2 сек при частоте 30 Гц
     
     if (!edges.empty()) {
         lineLostCounter = 0;  // Сбрасываем счётчик при обнаружении линии
