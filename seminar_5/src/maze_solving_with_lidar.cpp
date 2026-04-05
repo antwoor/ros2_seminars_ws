@@ -94,8 +94,8 @@ private:
          state_ == RobotState::TURNING_LEFT || 
          state_ == RobotState::TURNING_RIGHT) &&
         frontObstacle > frontThreshold_ &&
-        rightObstacle > 1.2 &&
-        leftObstacle > 1.2) {
+        rightObstacle > 1.5 &&
+        leftObstacle > 1.5) {
       
       state_ = RobotState::TURNING_AROUND;  // Начинаем разворот вместо остановки
       turnStartTime_ = this->now();
@@ -129,7 +129,7 @@ private:
 
     case RobotState::TURNING_AROUND: {
       command.linear.x = 0.0;
-      command.angular.z = angularVel_; // Вращаемся против часовой стрелки
+      command.angular.z = -angularVel_; // Вращаемся по часовой стрелки
       
       // Время разворота на 180° (π радиан) с запасом 10%
       float turnDuration = 3.14159f / angularVel_ * 1.1f;
@@ -146,8 +146,8 @@ private:
       command.linear.x = linearVel_;  // Едем вперёд в лабиринт
       command.angular.z = 0.0;
       
-      // Время возврата в лабиринт (3 секунды → проедет ~1.8 метра)
-      float returnDuration = 3.0f;
+      // Время возврата в лабиринт
+      float returnDuration = 2.0f;
       
       if ((this->now() - turnStartTime_).seconds() > returnDuration) {
         state_ = RobotState::MOVING_STRAIGHT;  // Возвращаемся к обычной логике
@@ -170,16 +170,16 @@ private:
     publisher_->publish(command);
   }
 
-  // ================= НАСТРОЕННЫЕ ПАРАМЕТРЫ (ВАШИ КОЭФФИЦИЕНТЫ!) =================
+  // ================= НАСТРОЕННЫЕ ПАРАМЕТРЫ =================
   float frontThreshold_ = 1.5f;  // Порог расстояния спереди (м)
 
-  float rightThreshold_ = 1.2f;  // Порог расстояния справа (м)
+  float rightThreshold_ = 1.5f;  // Порог расстояния справа (м)
 
-  float leftThreshold_ = 1.2f;   // Порог расстояния слева (м)
+  float leftThreshold_ = 1.5f;   // Порог расстояния слева (м)
 
   float angularVel_ = 0.4f;      // Угловая скорость поворота (рад/с)
 
-  float linearVel_ = 0.6f;       // Линейная скорость (м/с)
+  float linearVel_ = 0.8f;       // Линейная скорость (м/с)
 
   RobotState state_;             // Текущее состояние конечного автомата
   rclcpp::Time turnStartTime_;   // Время начала разворота/возврата
